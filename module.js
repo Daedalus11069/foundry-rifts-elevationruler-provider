@@ -27,16 +27,17 @@ Hooks.once("ready", () => {
 
   // These labels are from Font Awesome
   CONFIG.elevationruler.SPEED.ATTRIBUTES.WALK =
-    "actor.system.props.attacks_cur";
+    "actor.system.props.yards_per_melee";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.BURROW =
-    "actor.system.props.attacks_cur";
-  CONFIG.elevationruler.SPEED.ATTRIBUTES.FLY = "actor.system.props.attacks_cur";
+    "actor.system.props.yards_per_melee";
+  CONFIG.elevationruler.SPEED.ATTRIBUTES.FLY =
+    "actor.system.props.yards_per_melee";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.SWIM =
-    "actor.system.props.attacks_cur";
+    "actor.system.props.yards_per_melee";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.ACROBATICS =
-    "actor.system.props.attacks_cur";
+    "actor.system.props.yards_per_melee";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.TELEPORT =
-    "actor.system.props.attacks_cur";
+    "actor.system.props.yards_per_melee";
 
   CONFIG.elevationruler.MOVEMENT_BUTTONS[
     CONFIG.elevationruler.MOVEMENT_TYPES.SWIM
@@ -92,7 +93,7 @@ Hooks.once("ready", () => {
 //       if (false) {
 //         console.log("executed undo");
 //         let newDistance =
-//           parseInt(token.actor.system.props.attacks_cur, 10) +
+//           parseInt(token.actor.system.props.yards_per_melee, 10) +
 //           game.modules
 //             .get("elevationruler")
 //             .api.measure.MoveDistanceGridded.measure(start, end).distance;
@@ -101,7 +102,7 @@ Hooks.once("ready", () => {
 //           newDistance = token.actor.system.props.attacks_max;
 //         }
 //         await token.actor.update({
-//           "system.props.attacks_cur": `${newDistance}`
+//           "system.props.yards_per_melee": `${newDistance}`
 //         });
 //       } else {
 //         await token.setFlag(
@@ -119,8 +120,8 @@ Hooks.once("ready", () => {
 //           token.flags.elevationruler.movementHistory.lastMoveDistance
 //         );
 //         await token.actor.update({
-//           "system.props.attacks_cur": `${
-//             parseInt(token.actor.system.props.attacks_cur, 10) -
+//           "system.props.yards_per_melee": `${
+//             parseInt(token.actor.system.props.yards_per_melee, 10) -
 //             token.flags.elevationruler.movementHistory.lastMoveDistance
 //           }`
 //         });
