@@ -27,17 +27,17 @@ Hooks.once("ready", () => {
 
   // These labels are from Font Awesome
   CONFIG.elevationruler.SPEED.ATTRIBUTES.WALK =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.BURROW =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.FLY =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.SWIM =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.ACROBATICS =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.TELEPORT =
-    "actor.system.props.yards_per_action";
+    "actor.system.attributes.spd.yardsPerActionBonus";
 
   CONFIG.elevationruler.MOVEMENT_BUTTONS[
     CONFIG.elevationruler.MOVEMENT_TYPES.SWIM
@@ -51,23 +51,8 @@ Hooks.once("ready", () => {
     CONFIG.elevationruler.MOVEMENT_TYPES.TELEPORT
   ] = "portal-enter";
 
-  CONFIG.elevationruler.pathfindingCheckTerrains = true;
-
   CONFIG.elevationruler.SPEED.useFontAwesome = true;
   CONFIG.elevationruler.SPEED.terrainSymbol = "\uf071";
-
-  /**
-   * Given a token, retrieve its base speed.
-   * @param {Token} token                   Token whose speed is required
-   * @returns {number} Distance, in grid units
-   */
-  CONFIG.elevationruler.SPEED.tokenSpeed = function (token) {
-    const speedAttribute =
-      CONFIG.elevationruler.SPEED.ATTRIBUTES[token.movementType] ??
-      CONFIG.elevationruler.SPEED.ATTRIBUTES.WALK;
-    const speed = Number(foundry.utils.getProperty(token, speedAttribute));
-    return speed;
-  };
 });
 
 // Hooks.on("updateToken", async (token, changed, _options, _userId) => {
