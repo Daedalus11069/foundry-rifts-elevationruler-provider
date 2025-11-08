@@ -53,6 +53,43 @@ Hooks.once("ready", () => {
 
   CONFIG.elevationruler.SPEED.useFontAwesome = true;
   CONFIG.elevationruler.SPEED.terrainSymbol = "\uf071";
+
+  /**
+   * Get the key for a given object value. Presumes unique values, otherwise returns first.
+   */
+  function keyForValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
+
+  /**
+   * Given a token, retrieve its base speed.
+   * @param {Token} token                   Token whose speed is required
+   * @returns {number} Distance, in grid units
+   */
+  CONFIG.elevationruler.SPEED.tokenSpeed = function (token, movementType) {
+    movementType ??= token.movementType;
+    const speed = foundry.utils.getProperty(
+      token,
+      CONFIG.elevationruler.SPEED.ATTRIBUTES[
+        keyForValue(CONFIG.elevationruler.MOVEMENT_TYPES, movementType)
+      ]
+    );
+    const defaultSpeed = foundry.utils.getProperty(
+      token,
+      CONFIG.elevationruler.SPEED.ATTRIBUTES[
+        keyForValue(
+          CONFIG.elevationruler.MOVEMENT_TYPES,
+          CONFIG.elevationruler.MOVEMENT_TYPES.WALK
+        )
+      ]
+    );
+    if (movementType === CONFIG.elevationruler.MOVEMENT_TYPES.TELEPORT) {
+      return speed ? 100000 : defaultSpeed;
+    } else {
+      if (speed === null) return null;
+      return Number(speed);
+    }
+  };
 });
 
 // Hooks.on("updateToken", async (token, changed, _options, _userId) => {

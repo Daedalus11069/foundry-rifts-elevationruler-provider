@@ -1,5 +1,5 @@
 {
-  "id": "rifts-csb-elevationruler-provider",
+  "id": "rifts-elevationruler-provider",
   "title": "Rifts Elevation Ruler Provider",
   "description": "A module to provide movement data to a rifts sheet in custom system builder.",
   "authors": [
@@ -11,7 +11,7 @@
   "version": "0.1.0",
   "compatibility": {
     "minimum": "11",
-    "verified": "11",
+    "verified": "12",
     "maximum": "12"
   },
   "esmodules": ["module.js"],
