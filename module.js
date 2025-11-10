@@ -27,17 +27,17 @@ Hooks.once("ready", () => {
 
   // These labels are from Font Awesome
   CONFIG.elevationruler.SPEED.ATTRIBUTES.WALK =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.BURROW =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.FLY =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.SWIM =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.ACROBATICS =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
   CONFIG.elevationruler.SPEED.ATTRIBUTES.TELEPORT =
-    "actor.system.attributes.spd.yardsPerActionBonus";
+    "actor.system.attributes.spd.feetPerActionBonus";
 
   CONFIG.elevationruler.MOVEMENT_BUTTONS[
     CONFIG.elevationruler.MOVEMENT_TYPES.SWIM
